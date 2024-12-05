@@ -22,19 +22,15 @@ https://github.com/user-attachments/assets/96fc046d-6598-445e-baaf-4ade6296000c
   - [Technologies Used](#technologies-used)
   - [Project Workflows](#project-workflows)
     - [Development Workflow](#development-workflow)
-    - [AWS CI/CD Deployment Workflow](#aws-cicd-deployment-workflow)
   - [Setup Instructions](#setup-instructions)
     - [Clone the Repository](#clone-the-repository)
     - [Install Dependencies](#install-dependencies)
     - [Set Up DVC](#set-up-dvc)
     - [Set Up MLflow](#set-up-mlflow)
-    - [Configure AWS Credentials](#configure-aws-credentials)
   - [How to Run](#how-to-run)
     - [Preprocess the Data](#preprocess-the-data)
     - [Train and Log Experiments](#train-and-log-experiments)
     - [Evaluate the Model](#evaluate-the-model)
-    - [Push Changes with DVC](#push-changes-with-dvc)
-    - [Trigger CI/CD Pipeline](#trigger-cicd-pipeline)
   - [Repository Structure](#repository-structure)
   - [Future Enhancements](#future-enhancements)
   - [Acknowledgments](#acknowledgments)
@@ -104,34 +100,6 @@ The goal of this project is to showcase reproducible machine learning pipelines 
    - Evaluate models on test data using metrics like accuracy, precision, recall, and F1 score.  
    - Select the best-performing model.  
 
-6. **Versioning with DVC**  
-   - Version datasets and trained models using DVC.  
-   - Push data to remote storage to ensure reproducibility.
-
----
-
-### AWS CI/CD Deployment Workflow
-
-1. **Build Docker Image**  
-   - Create a `Dockerfile` to define the application environment.  
-
-2. **Set Up AWS Infrastructure**  
-   - Launch an EC2 instance for hosting the application.  
-   - Set up S3 buckets for storing datasets and artifacts.  
-   - Configure IAM roles and security groups.  
-
-3. **Write GitHub Actions Workflow**  
-   - Define CI/CD pipeline in `.github/workflows/deploy.yml`.  
-   - Steps include:  
-     - Building and testing the Docker image.  
-     - Pushing the Docker image to a container registry (e.g., Amazon ECR or Docker Hub).  
-     - Deploying the application to the EC2 instance.
-
-4. **Deployment Pipeline Steps**  
-   - Trigger the pipeline on `push` or `pull_request`.  
-   - Build and package the application.  
-   - Deploy the updated version to AWS.
-
 ---
 
 ## Setup Instructions
@@ -168,16 +136,6 @@ Ensure MLflow is installed and run the tracking server:
 ```bash
 mlflow ui
 ```
-
-### Configure AWS Credentials
-
-- Set up AWS CLI and configure credentials:  
-  ```bash
-  aws configure
-  ```
-- Ensure your EC2 instance has the necessary IAM roles and permissions.
-
----
 
 ## How to Run
 
