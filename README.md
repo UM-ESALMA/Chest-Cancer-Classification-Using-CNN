@@ -66,7 +66,6 @@ The goal of this project is to showcase reproducible machine learning pipelines 
 - **MLflow**: Tracks experiments and manages model lifecycle.  
 - **DVC**: Handles data and model versioning.  
 - **Scikit-learn**: Implements machine learning models.  
-- **GitHub Actions**: Automates CI/CD workflows.  
 - **Pandas & NumPy**: For data manipulation and analysis.  
 - **Matplotlib & Seaborn**: For visualizations.  
 
