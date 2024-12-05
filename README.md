@@ -45,9 +45,7 @@ Cancer classification is a crucial application of machine learning in healthcare
 - **Data pre-processing**  
 - **Feature extraction and engineering**  
 - **Model training and evaluation**  
-- **Experiment tracking with MLflow**  
-- **Versioning datasets and models with DVC**  
-- **CI/CD pipeline for deployment to AWS**  
+- **Experiment tracking with MLflow**   
 
 The goal of this project is to showcase reproducible machine learning pipelines and end-to-end deployment workflows.
 
@@ -58,7 +56,6 @@ The goal of this project is to showcase reproducible machine learning pipelines 
 - **End-to-End Machine Learning Workflow**: Covers data processing, training, evaluation, and deployment.  
 - **Experiment Tracking**: Using MLflow to log and compare experiments.  
 - **Data and Model Versioning**: Managed with DVC for reproducibility.  
-- **CI/CD Deployment**: Automated deployment to AWS using GitHub Actions.  
 - **Scalable Infrastructure**: Demonstrates cloud deployment principles.
 
 ---
@@ -69,9 +66,7 @@ The goal of this project is to showcase reproducible machine learning pipelines 
 - **MLflow**: Tracks experiments and manages model lifecycle.  
 - **DVC**: Handles data and model versioning.  
 - **Scikit-learn**: Implements machine learning models.  
-- **AWS (EC2, S3)**: Hosts the deployed application.  
 - **GitHub Actions**: Automates CI/CD workflows.  
-- **Docker**: Creates containers for deployment.  
 - **Pandas & NumPy**: For data manipulation and analysis.  
 - **Matplotlib & Seaborn**: For visualizations.  
 
@@ -165,25 +160,12 @@ dvc add data/processed_data.csv
 dvc push
 ```
 
-### Trigger CI/CD Pipeline
-
-- Commit and push changes to GitHub:  
-  ```bash
-  git add .
-  git commit -m "Updated pipeline"
-  git push origin main
-  ```
-- GitHub Actions will automatically build, test, and deploy the application.
-
----
 
 ## Repository Structure
 
 ```plaintext
 Chest-Cancer-Classification-Using-MLflow-and-DVC/
 │
-├── .github/workflows/           # GitHub Actions workflows
-│   └── deploy.yml               # CI/CD pipeline definition
 ├── data/                        # Raw and processed datasets
 ├── models/                      # Trained model files
 ├── notebooks/                   # Jupyter notebooks for exploration
